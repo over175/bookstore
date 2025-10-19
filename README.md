@@ -1,1 +1,4 @@
-# WpfApp1
+(Логин)
+Admin
+Manager
+Client
