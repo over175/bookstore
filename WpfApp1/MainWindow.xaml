@@ -1,0 +1,38 @@
+﻿<Window x:Class="BookStoreWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ООО «Мир Книг» - Информационная система" 
+        Height="600" Width="900"
+        WindowState="Maximized"
+        Background="{StaticResource PrimaryBackgroundBrush}">
+
+    <DockPanel>
+        
+        <Border DockPanel.Dock="Top" 
+                Background="{StaticResource SecondaryBackgroundBrush}" 
+                Height="80">
+            <TextBlock Text="ООО «Мир Книг»" 
+                      FontFamily="{StaticResource MainFont}"
+                      FontSize="24"
+                      FontWeight="Bold"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center"/>
+        </Border>
+
+       
+        <Menu DockPanel.Dock="Top" Background="{StaticResource AccentBrush}" Height="46">
+            <MenuItem Header="Книги" Height="47" Width="86">
+                <MenuItem Header="Просмотр книг" Click="ViewBooks_Click"/>
+                <MenuItem x:Name="mnuManageBooks" Header="Управление книгами" Click="ManageBooks_Click"/>
+            </MenuItem>
+            <MenuItem x:Name="mnuOrders" Header="Заказы">
+                <MenuItem Header="Просмотр заказов" Click="ViewOrders_Click"/>
+                <MenuItem x:Name="mnuManageOrders" Header="Управление заказами" Click="ManageOrders_Click"/>
+            </MenuItem>
+        </Menu>
+
+        
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
+
+    </DockPanel>
+</Window>

@@ -1,0 +1,51 @@
+﻿<!-- Views/OrdersWindow.xaml -->
+<Window x:Class="BookStoreWPF.Views.OrdersWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Просмотр заказов" Height="500" Width="800"
+        Background="{StaticResource PrimaryBackgroundBrush}">
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Заголовок -->
+        <TextBlock Grid.Row="0" Text="Просмотр заказов" 
+                  Style="{StaticResource HeaderTextStyle}"
+                  HorizontalAlignment="Center" Margin="0,0,0,10"/>
+
+        <!-- Панель фильтров -->
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,0,10">
+            <ComboBox x:Name="cmbStatusFilter" Width="150" Margin="0,0,10,0"
+                     SelectionChanged="CmbStatusFilter_SelectionChanged"
+                     Background="{StaticResource SecondaryBackgroundBrush}"
+                     FontFamily="{StaticResource MainFont}"
+                     FontSize="12">
+                <ComboBoxItem Content="Все статусы"/>
+                <ComboBoxItem Content="В обработке"/>
+                <ComboBoxItem Content="Выполнен"/>
+                <ComboBoxItem Content="Отменен"/>
+            </ComboBox>
+        </StackPanel>
+
+        <!-- Таблица заказов -->
+        <DataGrid x:Name="ordersGrid" Grid.Row="2"
+                 AutoGenerateColumns="False"
+                 IsReadOnly="True"
+                 Background="{StaticResource PrimaryBackgroundBrush}"
+                 FontFamily="{StaticResource MainFont}"
+                 FontSize="12">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="50"/>
+                <DataGridTextColumn Header="ID пользователя" Binding="{Binding UserId}" Width="100"/>
+                <DataGridTextColumn Header="ID книги" Binding="{Binding BookId}" Width="80"/>
+                <DataGridTextColumn Header="Количество" Binding="{Binding Quantity}" Width="80"/>
+                <DataGridTextColumn Header="Дата заказа" Binding="{Binding OrderDate, StringFormat={}{0:dd.MM.yyyy}}" Width="120"/>
+                <DataGridTextColumn Header="Статус" Binding="{Binding Status}" Width="120"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

@@ -1,0 +1,49 @@
+﻿<Window x:Class="BookStoreWPF.Views.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ООО «Мир Книг» - Вход в систему" 
+        Height="350" Width="400"
+        WindowStartupLocation="CenterScreen"
+        Background="{StaticResource PrimaryBackgroundBrush}">
+
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="300">
+
+            
+            <TextBlock Text="Вход в систему" 
+                      Style="{StaticResource HeaderTextStyle}"
+                      HorizontalAlignment="Center" 
+                      Margin="0,0,0,30"/>
+
+            
+            <TextBlock Text="Логин:" Style="{StaticResource MainTextStyle}" Margin="0,5"/>
+            <TextBox x:Name="txtLogin" 
+                    Background="{StaticResource SecondaryBackgroundBrush}"
+                    FontFamily="{StaticResource MainFont}"
+                    FontSize="12"
+                    Margin="0,5" Height="25"/>
+
+            
+            <TextBlock Text="Пароль:" Style="{StaticResource MainTextStyle}" Margin="0,5"/>
+            <PasswordBox x:Name="txtPassword"
+                        Background="{StaticResource SecondaryBackgroundBrush}"
+                        FontFamily="{StaticResource MainFont}"
+                        Margin="0,5" Height="25"/>
+
+            
+            <Button x:Name="btnLogin" 
+                    Content="Войти" 
+                    Style="{StaticResource AccentButtonStyle}"
+                    Click="BtnLogin_Click"
+                    Margin="0,15"/>
+
+            <Button x:Name="btnGuest" 
+                    Content="Войти как гость" 
+                    Background="LightGray"
+                    FontFamily="{StaticResource MainFont}"
+                    Click="BtnGuest_Click"
+                    Margin="0,5" Padding="10,5"/>
+
+        </StackPanel>
+    </Grid>
+</Window>

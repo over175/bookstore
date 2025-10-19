@@ -1,0 +1,81 @@
+﻿
+<Window x:Class="BookStoreWPF.Views.BookEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Редактирование книги" Height="400" Width="400"
+        WindowStartupLocation="CenterOwner"
+        Background="{StaticResource PrimaryBackgroundBrush}">
+
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="Редактирование книги" 
+                  Style="{StaticResource HeaderTextStyle}"
+                  HorizontalAlignment="Center" Margin="0,0,0,15"/>
+
+        
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Название:" 
+                  Style="{StaticResource MainTextStyle}" Margin="0,5"/>
+        <TextBox Grid.Row="1" Grid.Column="1" x:Name="txtTitle" 
+                Background="{StaticResource SecondaryBackgroundBrush}"
+                FontFamily="{StaticResource MainFont}" Margin="5"/>
+
+        
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Автор:" 
+                  Style="{StaticResource MainTextStyle}" Margin="0,5"/>
+        <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtAuthor" 
+                Background="{StaticResource SecondaryBackgroundBrush}"
+                FontFamily="{StaticResource MainFont}" Margin="5"/>
+
+        
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Жанр:" 
+                  Style="{StaticResource MainTextStyle}" Margin="0,5"/>
+        <ComboBox Grid.Row="3" Grid.Column="1" x:Name="cmbGenre" 
+                 Background="{StaticResource SecondaryBackgroundBrush}"
+                 FontFamily="{StaticResource MainFont}" Margin="5">
+            <ComboBoxItem Content="Классика"/>
+            <ComboBoxItem Content="Роман"/>
+            <ComboBoxItem Content="Фэнтези"/>
+            <ComboBoxItem Content="Антиутопия"/>
+            <ComboBoxItem Content="Детектив"/>
+            <ComboBoxItem Content="Научная литература"/>
+        </ComboBox>
+
+        
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="Цена:" 
+                  Style="{StaticResource MainTextStyle}" Margin="0,5"/>
+        <TextBox Grid.Row="4" Grid.Column="1" x:Name="txtPrice" 
+                Background="{StaticResource SecondaryBackgroundBrush}"
+                FontFamily="{StaticResource MainFont}" Margin="5"/>
+
+        
+        <TextBlock Grid.Row="5" Grid.Column="0" Text="Скидка (%):" 
+                  Style="{StaticResource MainTextStyle}" Margin="0,5"/>
+        <TextBox Grid.Row="5" Grid.Column="1" x:Name="txtDiscount" 
+                Background="{StaticResource SecondaryBackgroundBrush}"
+                FontFamily="{StaticResource MainFont}" Margin="5"/>
+
+        
+        <StackPanel Grid.Row="7" Grid.ColumnSpan="2" Orientation="Horizontal" 
+                   HorizontalAlignment="Center" Margin="0,15">
+            <Button x:Name="btnSave" Content="Сохранить" Click="BtnSave_Click"
+                    Style="{StaticResource AccentButtonStyle}"/>
+            <Button x:Name="btnCancel" Content="Отмена" Click="BtnCancel_Click"
+                    Style="{StaticResource AccentButtonStyle}"/>
+        </StackPanel>
+    </Grid>
+</Window>
